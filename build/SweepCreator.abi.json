@@ -1,0 +1,57 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "createBoard",
+			"inputs": [
+				{"name":"sweepercode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "lastestBoardWithMsg",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "lastestBoardWithoutMsg",
+			"inputs": [
+				{"name":"_addr","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "_boardCreated",
+			"inputs": [
+				{"name":"_board","type":"address"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"boardCreated","type":"map(address,address[])"}
+	]
+}

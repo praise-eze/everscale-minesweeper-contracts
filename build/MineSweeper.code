@@ -1,0 +1,896 @@
+.version sol 0.62.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+ENDS
+ACCEPT
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro generateRandomMinesNumbers
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/MineSweeper.sol, 15
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/MineSweeper.sol, 0
+CALLREF {
+	CALL $generateRandomMinesNumbers_33127650_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2684332898
+	STUR 130
+	SWAP
+	UNPAIR
+	XCHG S2
+	STU 32
+	STDICT
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	generateRandomMinesNumbers_33127650_internal
+.type	generateRandomMinesNumbers_33127650_internal, @function
+CALL $generateRandomMinesNumbers_33127650_internal_macro$
+
+.macro generateRandomMinesNumbers_33127650_internal_macro
+.loc ../contracts/MineSweeper.sol, 16
+PUSHINT 0
+NEWDICT
+PAIR
+.loc ../contracts/MineSweeper.sol, 17
+PUSHINT 0
+DUP
+.loc ../contracts/MineSweeper.sol, 20
+PUSHCONT {
+	DUP
+	LESSINT 7
+}
+PUSHCONT {
+	.loc ../contracts/MineSweeper.sol, 22
+	FALSE
+	.loc ../contracts/MineSweeper.sol, 23
+	PUSHINT 7
+	.loc ../contracts/MineSweeper.sol, 24
+	PUSHINT 0
+	.loc ../contracts/MineSweeper.sol, 27
+	PUSHCONT {
+		PUSH S2
+		NOT
+		PUSH2 S1, S2
+		LEQ
+		AND
+	}
+	PUSHCONT {
+		.loc ../contracts/MineSweeper.sol, 28
+		PUSH3 S6, S0, S3
+		LTIME
+		GETGLOB 9
+		NEWC
+		STSLICE
+		STU 64
+		STU 256
+		ROTREV
+		NEWC
+		STU 256
+		STU 256
+		STBREFR
+		ENDC
+		HASHCU
+		PUSHINT 17
+		MOD
+		INC
+		POP S5
+		.loc ../contracts/MineSweeper.sol, 29
+		FALSE
+		DUP
+		.loc ../contracts/MineSweeper.sol, 32
+		PUSHCONT {
+			PUSH2 S0, S7
+			FIRST
+			LESS
+		}
+		PUSHCONT {
+			.loc ../contracts/MineSweeper.sol, 33
+			PUSH2 S0, S7
+			SECOND
+			PUSHINT 32
+			DICTUGET
+			THROWIFNOT 50
+			PLDU 256
+			PUSH S7
+			EQUAL
+			PUSHCONT {
+				.loc ../contracts/MineSweeper.sol, 34
+				TRUE
+				POP S2
+				.loc ../contracts/MineSweeper.sol, 35
+				RETALT
+				.loc ../contracts/MineSweeper.sol, 0
+			}
+			IFJMP
+			.loc ../contracts/MineSweeper.sol, 32
+			INC
+			.loc ../contracts/MineSweeper.sol, 0
+		}
+		WHILEBRK
+		DROP
+		.loc ../contracts/MineSweeper.sol, 38
+		NOT
+		POP S3
+		.loc ../contracts/MineSweeper.sol, 39
+		INC
+		.loc ../contracts/MineSweeper.sol, 0
+	}
+	WHILE
+	.loc ../contracts/MineSweeper.sol, 42
+	PUSHREF {
+		.blob x4572726f722067656e65726174696e672072616e646f6d207469636b6574206e756d626572732e204d61782072657472792e
+	}
+	XCHG S2
+	LESS
+	THROWARGIFNOT 20
+	.loc ../contracts/MineSweeper.sol, 43
+	DROP
+	PUSH2 S1, S2
+	UNPAIR
+	PUXC S3, S-1
+	PUSH2 S1, S2
+	LESS
+	THROWIFNOT 50
+	ROLL 3
+	NEWC
+	STU 256
+	ROTREV
+	PUSHINT 32
+	DICTUSETB
+	PAIR
+	POP S3
+	.loc ../contracts/MineSweeper.sol, 44
+	GETGLOB 10
+	PUSH2 S1, S3
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 256
+	NEWC
+	STU 256
+	SWAP
+	UNPAIR
+	OVER
+	INC
+	ROLLREV 3
+	PUSHINT 32
+	DICTUSETB
+	PAIR
+	SETGLOB 10
+	.loc ../contracts/MineSweeper.sol, 20
+	INC
+	.loc ../contracts/MineSweeper.sol, 0
+}
+WHILE
+DROP2
+.loc ../contracts/MineSweeper.sol, 47
+NIP
+.loc ../contracts/MineSweeper.sol, 0
+
+.macro checkMineNumber
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/MineSweeper.sol, 50
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/MineSweeper.sol, 0
+CALLREF {
+	CALL $checkMineNumber_91634dcc_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3235869467
+	STUR 130
+	STI 1
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	checkMineNumber_91634dcc_internal
+.type	checkMineNumber_91634dcc_internal, @function
+CALL $checkMineNumber_91634dcc_internal_macro$
+
+.macro checkMineNumber_91634dcc_internal_macro
+.loc ../contracts/MineSweeper.sol, 50
+PUSHINT 0
+DUP
+.loc ../contracts/MineSweeper.sol, 51
+PUSHCONT {
+	DUP
+	GETGLOB 10
+	FIRST
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/MineSweeper.sol, 52
+	DUP
+	GETGLOB 10
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 256
+	PUSH S3
+	EQUAL
+	PUSHCONT {
+		.loc ../contracts/MineSweeper.sol, 53
+		TRUE
+		POP S2
+		.loc ../contracts/MineSweeper.sol, 54
+		RETALT
+		.loc ../contracts/MineSweeper.sol, 0
+	}
+	IFJMP
+	.loc ../contracts/MineSweeper.sol, 51
+	INC
+	.loc ../contracts/MineSweeper.sol, 0
+}
+WHILEBRK
+BLKDROP 3
+.loc ../contracts/MineSweeper.sol, 57
+FALSE
+.loc ../contracts/MineSweeper.sol, 0
+
+.macro move
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/MineSweeper.sol, 60
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/MineSweeper.sol, 0
+CALLREF {
+	CALL $move_87cb15f7_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3061142862
+	STUR 130
+	STI 1
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	move_87cb15f7_internal
+.type	move_87cb15f7_internal, @function
+CALL $move_87cb15f7_internal_macro$
+
+.macro move_87cb15f7_internal_macro
+.loc ../contracts/MineSweeper.sol, 60
+PUSHINT 0
+.loc ../contracts/MineSweeper.sol, 61
+PUSHREF {
+	.blob x616c726561647920776f6e
+}
+GETGLOB 12
+FALSE
+EQUAL
+GETGLOB 13
+TRUE
+EQUAL
+OR
+THROWARGIFNOT 10
+.loc ../contracts/MineSweeper.sol, 62
+OVER
+CALLREF {
+	CALL $checkMineNumber_91634dcc_internal_macro$
+}
+SETGLOB 12
+.loc ../contracts/MineSweeper.sol, 63
+PUSHINT 0
+PUSHCONT {
+	DUP
+	LESSINT 17
+}
+PUSHCONT {
+	.loc ../contracts/MineSweeper.sol, 64
+	DUP
+	GETGLOB 11
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 256
+	PUSH S3
+	EQUAL
+	PUSHCONT {
+		.loc ../contracts/MineSweeper.sol, 65
+		TRUE
+		POP S2
+		.loc ../contracts/MineSweeper.sol, 66
+		RETALT
+		.loc ../contracts/MineSweeper.sol, 0
+	}
+	IFJMP
+	.loc ../contracts/MineSweeper.sol, 63
+	INC
+	.loc ../contracts/MineSweeper.sol, 0
+}
+WHILEBRK
+DROP
+.loc ../contracts/MineSweeper.sol, 69
+GETGLOB 11
+FIRST
+EQINT 9
+GETGLOB 12
+FALSE
+EQUAL
+AND
+PUSHCONT {
+	.loc ../contracts/MineSweeper.sol, 70
+	TRUE
+	SETGLOB 13
+	.loc ../contracts/MineSweeper.sol, 0
+}
+IF
+.loc ../contracts/MineSweeper.sol, 72
+GETGLOB 11
+ROT
+NEWC
+STU 256
+SWAP
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETB
+PAIR
+SETGLOB 11
+.loc ../contracts/MineSweeper.sol, 0
+
+.macro checkAreaMoved
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/MineSweeper.sol, 75
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/MineSweeper.sol, 0
+CALLREF {
+	CALL $checkAreaMoved_a9a8903f_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 3192534600
+	STUR 130
+	STI 1
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	checkAreaMoved_a9a8903f_internal
+.type	checkAreaMoved_a9a8903f_internal, @function
+CALL $checkAreaMoved_a9a8903f_internal_macro$
+
+.macro checkAreaMoved_a9a8903f_internal_macro
+.loc ../contracts/MineSweeper.sol, 75
+PUSHINT 0
+DUP
+.loc ../contracts/MineSweeper.sol, 76
+PUSHCONT {
+	DUP
+	GETGLOB 11
+	FIRST
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/MineSweeper.sol, 77
+	DUP
+	GETGLOB 11
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 256
+	PUSH S3
+	EQUAL
+	PUSHCONT {
+		.loc ../contracts/MineSweeper.sol, 78
+		TRUE
+		POP S2
+		.loc ../contracts/MineSweeper.sol, 79
+		RETALT
+		.loc ../contracts/MineSweeper.sol, 0
+	}
+	IFJMP
+	.loc ../contracts/MineSweeper.sol, 76
+	INC
+	.loc ../contracts/MineSweeper.sol, 0
+}
+WHILEBRK
+BLKDROP 3
+.loc ../contracts/MineSweeper.sol, 82
+FALSE
+.loc ../contracts/MineSweeper.sol, 0
+
+.macro checkIsWon
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/MineSweeper.sol, 85
+ENDS
+.loc ../contracts/MineSweeper.sol, 0
+CALLREF {
+	CALL $checkIsWon_de91bad5_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2373855155
+	STUR 130
+	STI 1
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	checkIsWon_de91bad5_internal
+.type	checkIsWon_de91bad5_internal, @function
+CALL $checkIsWon_de91bad5_internal_macro$
+
+.macro checkIsWon_de91bad5_internal_macro
+.loc ../contracts/MineSweeper.sol, 86
+GETGLOB 13
+.loc ../contracts/MineSweeper.sol, 0
+
+.macro checkIsLost
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/MineSweeper.sol, 89
+ENDS
+.loc ../contracts/MineSweeper.sol, 0
+CALLREF {
+	CALL $checkIsLost_d6c0e0ab_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2235766626
+	STUR 130
+	STI 1
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	checkIsLost_d6c0e0ab_internal
+.type	checkIsLost_d6c0e0ab_internal, @function
+CALL $checkIsLost_d6c0e0ab_internal_macro$
+
+.macro checkIsLost_d6c0e0ab_internal_macro
+.loc ../contracts/MineSweeper.sol, 90
+GETGLOB 12
+.loc ../contracts/MineSweeper.sol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDU 32
+LDDICT
+ROTREV
+PAIR
+SWAP
+LDU 32
+LDDICT
+ROTREV
+PAIR
+SWAP
+LDI 1
+LDI 1
+ENDS
+SETGLOB 13
+SETGLOB 12
+SETGLOB 11
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHINT 0
+	NEWDICT
+	PAIR
+	DUP
+	PUSHINT 0
+	DUP
+	SETGLOB 13
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 13
+GETGLOB 12
+GETGLOB 11
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+STI 1
+STI 1
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+LDU 4 ; bounced tail
+LDMSGADDR ; bounced src tail
+DROP
+SETGLOB 9
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSHSLICE x8000000000000000000000000000000000000000000000000000000000000000001_
+SETGLOB 9
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	SWAP
+	LDU 1 ; signatureSlice hashMsgSlice hasPubkey msgSlice
+	SWAP
+	PUSHCONT {
+		LDU 256 ; signatureSlice hashMsgSlice pubkey msgSlice
+		XCHG S3
+		SWAP
+	}
+	PUSHCONT {
+		XCHG S2
+		GETGLOB 2
+	}
+	IFELSE
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+PUSHCONT {
+	LDU 1 ; hasPubkey msgSlice
+	SWAP
+	THROWIF 58
+}
+IFELSE
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; expireAt msgSlice
+SWAP
+NOW ; msgSlice expireAt now
+GREATER ; msgSlice expireAt>now
+THROWIFNOT 57
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro public_function_selector
+DUP
+PUSHINT 913659214
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 88282978
+	EQUAL
+	IFJMPREF {
+		CALL $checkIsLost$
+	}
+	DUP
+	PUSHINT 226371507
+	EQUAL
+	IFJMPREF {
+		CALL $checkIsWon$
+	}
+	DUP
+	PUSHINT 536849250
+	EQUAL
+	IFJMPREF {
+		CALL $generateRandomMinesNumbers$
+	}
+	DUP
+	PUSHINT 913659214
+	EQUAL
+	IFJMPREF {
+		CALL $move$
+	}
+}
+DUP
+PUSHINT 1756716863
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1045050952
+	EQUAL
+	IFJMPREF {
+		CALL $checkAreaMoved$
+	}
+	DUP
+	PUSHINT 1088385819
+	EQUAL
+	IFJMPREF {
+		CALL $checkMineNumber$
+	}
+	DUP
+	PUSHINT 1756716863
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+}
+

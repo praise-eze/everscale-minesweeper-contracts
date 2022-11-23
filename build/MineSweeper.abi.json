@@ -1,0 +1,79 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "generateRandomMinesNumbers",
+			"inputs": [
+				{"name":"_mineCount","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256[]"}
+			]
+		},
+		{
+			"name": "checkMineNumber",
+			"inputs": [
+				{"name":"_num","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"answ","type":"bool"}
+			]
+		},
+		{
+			"name": "move",
+			"inputs": [
+				{"name":"_id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"result","type":"bool"}
+			]
+		},
+		{
+			"name": "checkAreaMoved",
+			"inputs": [
+				{"name":"_num","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"_result","type":"bool"}
+			]
+		},
+		{
+			"name": "checkIsWon",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"result","type":"bool"}
+			]
+		},
+		{
+			"name": "checkIsLost",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"result","type":"bool"}
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"mineNumbers","type":"uint256[]"},
+		{"name":"moved","type":"uint256[]"},
+		{"name":"isLost","type":"bool"},
+		{"name":"isWon","type":"bool"}
+	]
+}

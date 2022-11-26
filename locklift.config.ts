@@ -1,7 +1,7 @@
 import { LockliftConfig } from "locklift";
 import { FactorySource } from "./build/factorySource";
 import { SimpleGiver, GiverWallet, GiverWalletV2_3 } from "./giverSettings";
-
+require("dotenv").config();
 declare global {
   const locklift: import("locklift").Locklift<FactorySource>;
 }
@@ -66,6 +66,33 @@ const config: LockliftConfig = {
       },
     },
     test: {
+      connection: {
+        id: 1,
+        type: "graphql",
+        group: "dev",
+        data: {
+          endpoints: [DEV_NET_NETWORK_ENDPOINT],
+          latencyDetectionInterval: 1000,
+          local: false,
+        },
+      },
+      giver: {
+        giverFactory: (ever, keyPair, address) => new GiverWalletV2_3(ever, keyPair, address),
+        address: "0:85bd2edcd576b990990fc8b72552f45d8f2020dc66ff9dc5751dc16880e51c46",
+        phrase: process.env.PRIVATEKEY1!,
+        accountId: 0,
+      },
+      tracing: {
+        endpoint: DEV_NET_NETWORK_ENDPOINT,
+      },
+      keys: {
+        // Use everdev to generate your phrase
+        // !!! Never commit it in your repos !!!
+        phrase: process.env.PRIVATEKEY1!,
+        amount: 10,
+      },
+    },
+    test1: {
       connection: {
         id: 1,
         type: "graphql",

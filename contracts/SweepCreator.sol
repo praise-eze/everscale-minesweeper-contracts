@@ -8,6 +8,7 @@ contract SweepCreator {
   event _boardCreated(address _board);
 
   function createBoard(TvmCell sweepercode) external {
+    tvm.accept();
     MineSweeper sweeper = new MineSweeper{ code: sweepercode, value: 0, flag: 128 }();
     emit _boardCreated(sweeper);
     boardCreated[msg.sender].push(sweeper);

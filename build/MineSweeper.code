@@ -10,7 +10,13 @@ IFREF {
 GETGLOB 6
 THROWIF 51
 ENDS
-ACCEPT
+.loc ../contracts/MineSweeper.sol, 12
+PUSHINT 7
+CALLREF {
+	CALL $generateRandomMinesNumbers_33127650_internal_macro$
+}
+DROP
+.loc ../contracts/MineSweeper.sol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -25,7 +31,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/MineSweeper.sol, 15
+.loc ../contracts/MineSweeper.sol, 18
 OVER
 PUSHCONT {
 	LDREF
@@ -76,26 +82,26 @@ THROW 0
 CALL $generateRandomMinesNumbers_33127650_internal_macro$
 
 .macro generateRandomMinesNumbers_33127650_internal_macro
-.loc ../contracts/MineSweeper.sol, 16
+.loc ../contracts/MineSweeper.sol, 19
 PUSHINT 0
 NEWDICT
 PAIR
-.loc ../contracts/MineSweeper.sol, 17
+.loc ../contracts/MineSweeper.sol, 20
 PUSHINT 0
 DUP
-.loc ../contracts/MineSweeper.sol, 20
+.loc ../contracts/MineSweeper.sol, 23
 PUSHCONT {
 	DUP
 	LESSINT 7
 }
 PUSHCONT {
-	.loc ../contracts/MineSweeper.sol, 22
+	.loc ../contracts/MineSweeper.sol, 25
 	FALSE
-	.loc ../contracts/MineSweeper.sol, 23
+	.loc ../contracts/MineSweeper.sol, 26
 	PUSHINT 7
-	.loc ../contracts/MineSweeper.sol, 24
-	PUSHINT 0
 	.loc ../contracts/MineSweeper.sol, 27
+	PUSHINT 0
+	.loc ../contracts/MineSweeper.sol, 30
 	PUSHCONT {
 		PUSH S2
 		NOT
@@ -104,7 +110,7 @@ PUSHCONT {
 		AND
 	}
 	PUSHCONT {
-		.loc ../contracts/MineSweeper.sol, 28
+		.loc ../contracts/MineSweeper.sol, 31
 		PUSH3 S6, S0, S3
 		LTIME
 		GETGLOB 9
@@ -123,17 +129,17 @@ PUSHCONT {
 		MOD
 		INC
 		POP S5
-		.loc ../contracts/MineSweeper.sol, 29
+		.loc ../contracts/MineSweeper.sol, 32
 		FALSE
 		DUP
-		.loc ../contracts/MineSweeper.sol, 32
+		.loc ../contracts/MineSweeper.sol, 35
 		PUSHCONT {
 			PUSH2 S0, S7
 			FIRST
 			LESS
 		}
 		PUSHCONT {
-			.loc ../contracts/MineSweeper.sol, 33
+			.loc ../contracts/MineSweeper.sol, 36
 			PUSH2 S0, S7
 			SECOND
 			PUSHINT 32
@@ -143,36 +149,36 @@ PUSHCONT {
 			PUSH S7
 			EQUAL
 			PUSHCONT {
-				.loc ../contracts/MineSweeper.sol, 34
+				.loc ../contracts/MineSweeper.sol, 37
 				TRUE
 				POP S2
-				.loc ../contracts/MineSweeper.sol, 35
+				.loc ../contracts/MineSweeper.sol, 38
 				RETALT
 				.loc ../contracts/MineSweeper.sol, 0
 			}
 			IFJMP
-			.loc ../contracts/MineSweeper.sol, 32
+			.loc ../contracts/MineSweeper.sol, 35
 			INC
 			.loc ../contracts/MineSweeper.sol, 0
 		}
 		WHILEBRK
 		DROP
-		.loc ../contracts/MineSweeper.sol, 38
+		.loc ../contracts/MineSweeper.sol, 41
 		NOT
 		POP S3
-		.loc ../contracts/MineSweeper.sol, 39
+		.loc ../contracts/MineSweeper.sol, 42
 		INC
 		.loc ../contracts/MineSweeper.sol, 0
 	}
 	WHILE
-	.loc ../contracts/MineSweeper.sol, 42
+	.loc ../contracts/MineSweeper.sol, 45
 	PUSHREF {
 		.blob x4572726f722067656e65726174696e672072616e646f6d207469636b6574206e756d626572732e204d61782072657472792e
 	}
 	XCHG S2
 	LESS
 	THROWARGIFNOT 20
-	.loc ../contracts/MineSweeper.sol, 43
+	.loc ../contracts/MineSweeper.sol, 46
 	DROP
 	PUSH2 S1, S2
 	UNPAIR
@@ -188,7 +194,7 @@ PUSHCONT {
 	DICTUSETB
 	PAIR
 	POP S3
-	.loc ../contracts/MineSweeper.sol, 44
+	.loc ../contracts/MineSweeper.sol, 47
 	GETGLOB 10
 	PUSH2 S1, S3
 	SECOND
@@ -207,13 +213,13 @@ PUSHCONT {
 	DICTUSETB
 	PAIR
 	SETGLOB 10
-	.loc ../contracts/MineSweeper.sol, 20
+	.loc ../contracts/MineSweeper.sol, 23
 	INC
 	.loc ../contracts/MineSweeper.sol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/MineSweeper.sol, 47
+.loc ../contracts/MineSweeper.sol, 50
 NIP
 .loc ../contracts/MineSweeper.sol, 0
 
@@ -226,7 +232,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/MineSweeper.sol, 50
+.loc ../contracts/MineSweeper.sol, 53
 OVER
 PUSHCONT {
 	LDREF
@@ -272,10 +278,10 @@ THROW 0
 CALL $checkMineNumber_91634dcc_internal_macro$
 
 .macro checkMineNumber_91634dcc_internal_macro
-.loc ../contracts/MineSweeper.sol, 50
+.loc ../contracts/MineSweeper.sol, 53
 PUSHINT 0
 DUP
-.loc ../contracts/MineSweeper.sol, 51
+.loc ../contracts/MineSweeper.sol, 54
 PUSHCONT {
 	DUP
 	GETGLOB 10
@@ -283,7 +289,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/MineSweeper.sol, 52
+	.loc ../contracts/MineSweeper.sol, 55
 	DUP
 	GETGLOB 10
 	SECOND
@@ -294,21 +300,21 @@ PUSHCONT {
 	PUSH S3
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/MineSweeper.sol, 53
+		.loc ../contracts/MineSweeper.sol, 56
 		TRUE
 		POP S2
-		.loc ../contracts/MineSweeper.sol, 54
+		.loc ../contracts/MineSweeper.sol, 57
 		RETALT
 		.loc ../contracts/MineSweeper.sol, 0
 	}
 	IFJMP
-	.loc ../contracts/MineSweeper.sol, 51
+	.loc ../contracts/MineSweeper.sol, 54
 	INC
 	.loc ../contracts/MineSweeper.sol, 0
 }
 WHILEBRK
 BLKDROP 3
-.loc ../contracts/MineSweeper.sol, 57
+.loc ../contracts/MineSweeper.sol, 60
 FALSE
 .loc ../contracts/MineSweeper.sol, 0
 
@@ -321,7 +327,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/MineSweeper.sol, 60
+.loc ../contracts/MineSweeper.sol, 63
 OVER
 PUSHCONT {
 	LDREF
@@ -368,9 +374,11 @@ THROW 0
 CALL $move_87cb15f7_internal_macro$
 
 .macro move_87cb15f7_internal_macro
-.loc ../contracts/MineSweeper.sol, 60
+.loc ../contracts/MineSweeper.sol, 63
 PUSHINT 0
-.loc ../contracts/MineSweeper.sol, 61
+.loc ../contracts/MineSweeper.sol, 64
+ACCEPT
+.loc ../contracts/MineSweeper.sol, 66
 PUSHREF {
 	.blob x616c726561647920776f6e
 }
@@ -382,20 +390,20 @@ TRUE
 EQUAL
 OR
 THROWARGIFNOT 10
-.loc ../contracts/MineSweeper.sol, 62
+.loc ../contracts/MineSweeper.sol, 67
 OVER
 CALLREF {
 	CALL $checkMineNumber_91634dcc_internal_macro$
 }
 SETGLOB 12
-.loc ../contracts/MineSweeper.sol, 63
+.loc ../contracts/MineSweeper.sol, 68
 PUSHINT 0
 PUSHCONT {
 	DUP
 	LESSINT 17
 }
 PUSHCONT {
-	.loc ../contracts/MineSweeper.sol, 64
+	.loc ../contracts/MineSweeper.sol, 69
 	DUP
 	GETGLOB 11
 	SECOND
@@ -406,21 +414,21 @@ PUSHCONT {
 	PUSH S3
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/MineSweeper.sol, 65
+		.loc ../contracts/MineSweeper.sol, 70
 		TRUE
 		POP S2
-		.loc ../contracts/MineSweeper.sol, 66
+		.loc ../contracts/MineSweeper.sol, 71
 		RETALT
 		.loc ../contracts/MineSweeper.sol, 0
 	}
 	IFJMP
-	.loc ../contracts/MineSweeper.sol, 63
+	.loc ../contracts/MineSweeper.sol, 68
 	INC
 	.loc ../contracts/MineSweeper.sol, 0
 }
 WHILEBRK
 DROP
-.loc ../contracts/MineSweeper.sol, 69
+.loc ../contracts/MineSweeper.sol, 74
 GETGLOB 11
 FIRST
 EQINT 9
@@ -429,13 +437,13 @@ FALSE
 EQUAL
 AND
 PUSHCONT {
-	.loc ../contracts/MineSweeper.sol, 70
+	.loc ../contracts/MineSweeper.sol, 75
 	TRUE
 	SETGLOB 13
 	.loc ../contracts/MineSweeper.sol, 0
 }
 IF
-.loc ../contracts/MineSweeper.sol, 72
+.loc ../contracts/MineSweeper.sol, 77
 GETGLOB 11
 ROT
 NEWC
@@ -460,7 +468,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/MineSweeper.sol, 75
+.loc ../contracts/MineSweeper.sol, 80
 OVER
 PUSHCONT {
 	LDREF
@@ -506,10 +514,10 @@ THROW 0
 CALL $checkAreaMoved_a9a8903f_internal_macro$
 
 .macro checkAreaMoved_a9a8903f_internal_macro
-.loc ../contracts/MineSweeper.sol, 75
+.loc ../contracts/MineSweeper.sol, 80
 PUSHINT 0
 DUP
-.loc ../contracts/MineSweeper.sol, 76
+.loc ../contracts/MineSweeper.sol, 81
 PUSHCONT {
 	DUP
 	GETGLOB 11
@@ -517,7 +525,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/MineSweeper.sol, 77
+	.loc ../contracts/MineSweeper.sol, 82
 	DUP
 	GETGLOB 11
 	SECOND
@@ -528,21 +536,21 @@ PUSHCONT {
 	PUSH S3
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/MineSweeper.sol, 78
+		.loc ../contracts/MineSweeper.sol, 83
 		TRUE
 		POP S2
-		.loc ../contracts/MineSweeper.sol, 79
+		.loc ../contracts/MineSweeper.sol, 84
 		RETALT
 		.loc ../contracts/MineSweeper.sol, 0
 	}
 	IFJMP
-	.loc ../contracts/MineSweeper.sol, 76
+	.loc ../contracts/MineSweeper.sol, 81
 	INC
 	.loc ../contracts/MineSweeper.sol, 0
 }
 WHILEBRK
 BLKDROP 3
-.loc ../contracts/MineSweeper.sol, 82
+.loc ../contracts/MineSweeper.sol, 87
 FALSE
 .loc ../contracts/MineSweeper.sol, 0
 
@@ -555,7 +563,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/MineSweeper.sol, 85
+.loc ../contracts/MineSweeper.sol, 90
 ENDS
 .loc ../contracts/MineSweeper.sol, 0
 CALLREF {
@@ -593,7 +601,7 @@ THROW 0
 CALL $checkIsWon_de91bad5_internal_macro$
 
 .macro checkIsWon_de91bad5_internal_macro
-.loc ../contracts/MineSweeper.sol, 86
+.loc ../contracts/MineSweeper.sol, 91
 GETGLOB 13
 .loc ../contracts/MineSweeper.sol, 0
 
@@ -606,7 +614,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/MineSweeper.sol, 89
+.loc ../contracts/MineSweeper.sol, 94
 ENDS
 .loc ../contracts/MineSweeper.sol, 0
 CALLREF {
@@ -644,7 +652,7 @@ THROW 0
 CALL $checkIsLost_d6c0e0ab_internal_macro$
 
 .macro checkIsLost_d6c0e0ab_internal_macro
-.loc ../contracts/MineSweeper.sol, 90
+.loc ../contracts/MineSweeper.sol, 95
 GETGLOB 12
 .loc ../contracts/MineSweeper.sol, 0
 

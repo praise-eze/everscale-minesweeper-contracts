@@ -4,6 +4,13 @@
 	"header": ["pubkey", "time", "expire"],
 	"functions": [
 		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "generateRandomMinesNumbers",
 			"inputs": [
 				{"name":"_mineCount","type":"uint256"}
@@ -53,13 +60,6 @@
 			],
 			"outputs": [
 				{"name":"result","type":"bool"}
-			]
-		},
-		{
-			"name": "constructor",
-			"inputs": [
-			],
-			"outputs": [
 			]
 		}
 	],

@@ -8,10 +8,13 @@ contract MineSweeper {
   bool isLost;
   bool isWon;
 
+  constructor() public {
+    generateRandomMinesNumbers({ _mineCount: 7 });
+  }
+
   /// @dev Generate 7 numbers ( 1 <= x >= 17) without duplicate numbers
   /// @param _mineCount used for the random generator number function
-  /// @return uint256[5] return an array of 5 generated uint
-
+  /// @return uint256[7] return an array of 5 generated uint
   function generateRandomMinesNumbers(uint256 _mineCount) public returns (uint256[7]) {
     uint256[7] numbers;
     uint256 generatedNumber;
@@ -58,6 +61,8 @@ contract MineSweeper {
   }
 
   function move(uint256 _id) public returns (bool result) {
+    tvm.accept();
+
     require(isLost == false || isWon == true, 10, "already won");
     isLost = checkMineNumber(_id);
     for (uint256 i = 0; i < 17; i++) {

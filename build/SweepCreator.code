@@ -40,6 +40,8 @@ THROW 0
 
 .macro createBoard_5248a5dc_internal_macro
 .loc ../contracts/SweepCreator.sol, 11
+ACCEPT
+.loc ../contracts/SweepCreator.sol, 12
 PUSHINT 0
 NEWC
 STU 256
@@ -98,7 +100,7 @@ STSLICECONST x345aaf9fc_
 ENDC
 PUSHPOW2 7
 SENDRAWMSG
-.loc ../contracts/SweepCreator.sol, 12
+.loc ../contracts/SweepCreator.sol, 13
 DUP
 PUSHSLICE xc000000000000000000000000057ec7635
 NEWC
@@ -107,7 +109,7 @@ STSLICE
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/SweepCreator.sol, 13
+.loc ../contracts/SweepCreator.sol, 14
 GETGLOB 9
 GETGLOB 10
 DUP2
@@ -153,7 +155,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/SweepCreator.sol, 16
+.loc ../contracts/SweepCreator.sol, 17
 ENDS
 .loc ../contracts/SweepCreator.sol, 0
 CALLREF {
@@ -195,7 +197,7 @@ THROW 0
 CALL $lastestBoardWithMsg_b0c37ed5_internal_macro$
 
 .macro lastestBoardWithMsg_b0c37ed5_internal_macro
-.loc ../contracts/SweepCreator.sol, 17
+.loc ../contracts/SweepCreator.sol, 18
 GETGLOB 9
 GETGLOB 10
 PUSHINT 267
@@ -242,7 +244,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/SweepCreator.sol, 20
+.loc ../contracts/SweepCreator.sol, 21
 OVER
 PUSHCONT {
 	LDREF
@@ -292,7 +294,7 @@ THROW 0
 CALL $lastestBoardWithoutMsg_2c92edb1_internal_macro$
 
 .macro lastestBoardWithoutMsg_2c92edb1_internal_macro
-.loc ../contracts/SweepCreator.sol, 21
+.loc ../contracts/SweepCreator.sol, 22
 DUP
 GETGLOB 10
 PUSHINT 267
